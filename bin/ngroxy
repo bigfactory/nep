@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var program = require('commander');
 var log = require('../lib/util/log');
-var ngroxy = require('../');
+var gam = require('../');
 var conf = require('../package.json');
 
 program
@@ -32,7 +32,7 @@ process.on('uncaughtException', function(err) {
 
 var rules = require(file);
 
-ngroxy.create({
+gam.create({
     port: program.port,
     debug: program.debug,
     rules: rules
