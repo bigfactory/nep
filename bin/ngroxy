@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var program = require('commander');
+var log = require('../lib/util/log');
+var ngroxy = require('../');
+var conf = require('../package.json');
+
+program
+    .version(conf.version)
+    .usage('[options] [file]')
+    .option('-p, --port [port]', 'Specify the port nproxy will listen on(8989 by default)', parseInt)
+    .option('-d, --debug', 'Enable debug mode');
+
+program.parse(process.argv);
+
+if (!program.args[0]) {
+    program.help();
+    process.exit(0);
+}
+
+var file = program.args[0];
+
+if (!fs.existsSync(file)) {
+    log.error('rule file ' + file + ' can not be found!');
+    process.exit(0);
+}
+
+process.on('uncaughtException', function(err) {
+    log.error('uncaughtException: ' + err.message);
+});
+
+var rules = require(file);
+
+ngroxy.create({
+    port: program.port,
+    debug: program.debug,
+    rules: rules
+});
+
+
