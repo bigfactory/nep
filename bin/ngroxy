@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
+var path = require('path');
 var program = require('commander');
 var log = require('../lib/util/log');
 var ngroxy = require('../');
@@ -14,12 +15,11 @@ program
 
 program.parse(process.argv);
 
-if (!program.args[0]) {
-    program.help();
-    process.exit(0);
-}
-
 var file = program.args[0];
+
+if(!file){
+    file = path.join(process.cwd(), 'config.js');
+}
 
 if (!fs.existsSync(file)) {
     log.error('rule file ' + file + ' can not be found!');
