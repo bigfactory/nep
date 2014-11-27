@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var program = require('commander');
 var log = require('../lib/util/log');
-var gam = require('../');
+var nep = require('../');
 var conf = require('../package.json');
 
 program
@@ -27,12 +27,13 @@ if (!fs.existsSync(file)) {
 }
 
 process.on('uncaughtException', function(err) {
+    //throw(err);
     log.error('uncaughtException: ' + err.message);
 });
 
 var rules = require(file);
 
-gam.create({
+nep.create({
     port: program.port,
     debug: program.debug,
     rules: rules

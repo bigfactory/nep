@@ -1,20 +1,23 @@
 {
-    "name": "gam",
-    "pkgprefix": "gam",
+    "name": "nep",
+    "pkgprefix": "nep",
     "version": "1.0.0",
     "description": "proxy combiner",
     "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
+    "bin": {"nep": "./bin/nep"},
     "author": {
         "name": "hxc",
         "email": "xiaocong.hxc@qq.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/bigfactory/nep.git"
     },
     "license": "ISC",
     "dependencies": {
         "commander": "^2.5.0",
         "express": "^4.10.4",
-        "lodash": "^2.4.1"
+        "lodash": "^2.4.1",
+        "nep-request": "~0"
     }
 }

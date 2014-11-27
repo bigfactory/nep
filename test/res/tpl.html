@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="gbk">
+    <title>buy</title>
+    <script src="http://g.assets.daily.taobao.net/??kissy/k/5.0.0/seed.js,buy/demo/1.0.0/mods.js,buy/base/0.0.1/mods.js" data-config="{combine:true}"></script>
+</head>
+<body>
+<script>
+    #OrderData#
+</script>
+<div id="container"></div>
+<script>
+    require.config({
+        packages: {
+            'mt': {
+                base: 'http://g.assets.daily.taobao.net/buy/demo/1.0.0/',
+                group: '1',
+                charset: 'utf-8'
+            },
+            'buy': {
+                base: 'http://g.assets.daily.taobao.net/buy/base/0.0.1/',
+                group: '1',
+                charset: 'utf-8'
+            }
+        }
+    });
+
+    require('mt/app', function(app){
+        app.init();
+    });
+</script>
+</body>
+</html>
