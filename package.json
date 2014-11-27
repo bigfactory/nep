@@ -1,7 +1,7 @@
 {
     "name": "nep",
     "pkgprefix": "nep",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "proxy combiner",
     "main": "index.js",
     "bin": {"nep": "./bin/nep"},
