@@ -2,7 +2,7 @@
     "name": "nep",
     "pkgprefix": "nep",
     "version": "1.0.1",
-    "description": "proxy combiner",
+    "description": "Node Express Proxy",
     "main": "index.js",
     "bin": {"nep": "./bin/nep"},
     "author": {

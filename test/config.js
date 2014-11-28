@@ -1,3 +1,10 @@
+
+var fs = require('fs');
+function sayHi(callback){
+    callback(null, 'xxxx');
+}
+
+
 module.exports = [
     {
         pattern: 'http://g.assets.daily.taobao.net/',
@@ -12,6 +19,19 @@ module.exports = [
         responder: 'buy',
         options: {
             tpl: '/github/nep/test/res/tpl.html'
+        }
+    },
+
+    {
+        pattern: 'http://a.js',
+        responder: 'mix',
+        options: {
+            routers : [
+                [fs.readFile, '/github/nep/test/a.js'],
+                [sayHi]
+            ],
+            type: 'js',
+            charset: 'gbk'
         }
     }
 ];
