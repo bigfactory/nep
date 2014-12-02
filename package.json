@@ -1,7 +1,7 @@
 {
   "name": "nep",
   "pkgprefix": "nep",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Node Express Proxy",
   "main": "index.js",
   "bin": {
