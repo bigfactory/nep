@@ -1,7 +1,7 @@
 {
   "name": "nep",
   "pkgprefix": "nep",
-  "version": "1.1.4",
+  "version": "1.1.8",
   "description": "Node Express Proxy",
   "main": "index.js",
   "bin": {
@@ -21,7 +21,7 @@
     "commander": "^2.5.0",
     "express": "^4.10.4",
     "lodash": "^2.4.1",
-    "nep-certificate": "0.0.2",
+    "nep-certificate": "0.0.6",
     "nep-env": "0.0.2",
     "nep-request": "~0"
   }
